@@ -83,7 +83,7 @@ func FirstTurn(card1, card2, dealer_card string) string {
 
 func SwitchTest() {
 	var card1_name = "ace"
-	fmt.Println("my", card1_name, "is worth", ParseCard(card1_name))
+	fmt.Printf("my %s is worth %d\n", card1_name, ParseCard(card1_name))
 	var card2_name = "ace"
 	var dealer_card_name = "jack"
 	fmt.Println("player should", FirstTurn(card1_name, card2_name, dealer_card_name))

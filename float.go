@@ -37,9 +37,10 @@ func YearsBeforeDesiredBalance(balance, targetBalance float32) int {
 
 func FloatTest() {
 	balance := float32(200.75)
-	fmt.Println(fmt.Sprintf("if i have %.2f then my interest rate is %.5f", balance, InterestRate(balance)))
-	fmt.Println(fmt.Sprintf("if i have %.2f then my interest after 1 year is %.6f", balance, Interest(balance)))
-	fmt.Println(fmt.Sprintf("if i have %.2f then my balance after 1 year is %.5f", balance, AnnualBalanceUpdate(balance)))
+	fmt.Printf("if i have %.2f then my interest rate is %.5f\n", balance, InterestRate(balance))
+	fmt.Printf("if i have %.2f then my interest after 1 year is %.6f\n", balance, Interest(balance))
+	fmt.Printf("if i have %.2f then my balance after 1 year is %.5f\n", balance, AnnualBalanceUpdate(balance))
 	desiredBalance := float32(214.88)
-	fmt.Println(fmt.Sprintf("if i have %.2f and want to have %.2f, it will take me %d years", balance, desiredBalance, YearsBeforeDesiredBalance(balance, desiredBalance)))
+	fmt.Printf("if i have %.2f and want to have %.2f, it will take me %d years\n",
+		balance, desiredBalance, YearsBeforeDesiredBalance(balance, desiredBalance))
 }

@@ -37,13 +37,13 @@ func FixBirdCountLog(birds []int) []int {
 }
 
 func ForTest() {
-	fmt.Println(fmt.Sprintf("i saw %d birds in %d days", TotalBirdCount(birdsPerDay), len(birdsPerDay)))
+	fmt.Printf("i saw %d birds in %d days\n", TotalBirdCount(birdsPerDay), len(birdsPerDay))
 	week := 2
-	fmt.Println(fmt.Sprintf("in week %d i saw %d birds", week, BirdsInWeek(birdsPerDay, week)))
+	fmt.Printf("in week %d i saw %d birds\n", week, BirdsInWeek(birdsPerDay, week))
 	week = 1
-	fmt.Println(fmt.Sprintf("in week %d i saw %d birds", week, BirdsInWeek(birdsPerDay, week)))
+	fmt.Printf("in week %d i saw %d birds\n", week, BirdsInWeek(birdsPerDay, week))
 	fmt.Println("old log:", birdsPerDay)
 	var new_log = FixBirdCountLog(birdsPerDay)
 	fmt.Println("new log:", new_log)
-	fmt.Println(fmt.Sprintf("after fixing the log, i actually saw %d birds in %d days", TotalBirdCount(new_log), len(birdsPerDay)))
+	fmt.Printf("after fixing the log, i actually saw %d birds in %d days\n", TotalBirdCount(new_log), len(birdsPerDay))
 }

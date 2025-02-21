@@ -41,7 +41,7 @@ func CanFinish(car Car, track Track) bool {
 	// Can the car make it that many laps?
 	var battery_drainage = lap_count * car.battery_drain
 	if battery_drainage < 100 {
-		fmt.Println(fmt.Sprintf("it'll take %d laps and battery will be at %d", lap_count, car.battery-battery_drainage))
+		fmt.Printf("it'll take %d laps and battery will be at %d\n", lap_count, car.battery-battery_drainage)
 		return true
 	}
 	/*
@@ -59,6 +59,29 @@ func CanFinish(car Car, track Track) bool {
 	return false
 }
 
+// Pointer allows the car's values to be changed in the function
+func (car *Car) Drive() {
+	car.battery -= car.battery_drain
+	car.distance += car.speed
+}
+
+// Non-pointer allows "read only" of car's values
+func (car Car) DisplayDistance() {
+	fmt.Printf("Driven %d meters\n", car.distance)
+}
+
+func (car Car) DisplayBattery() {
+	fmt.Printf("Battery at %d%%\n", car.battery)
+}
+
+func (car Car) CanFinish(track_distance int) bool {
+	// If less than the maximum distance, yes
+	if car.battery_drain*car.speed < track_distance {
+		return true
+	}
+	return false
+}
+
 func StructsTest() {
 	car := NewCar(5, 2)
 	fmt.Println("new car with 5 speed and battery drain 2:", car)
@@ -67,5 +90,13 @@ func StructsTest() {
 	fmt.Println("drove car one lap", car)
 	car = NewCar(5, 2)
 	track := NewTrack(100)
-	fmt.Println("can the car", car, "make it around the track", track, "?", CanFinish(car, track))
+	fmt.Printf("can the car %v make it around the track %v? %t\n", car, track, CanFinish(car, track))
+
+	fmt.Printf("\n *** using built in methods on the car now ***\n\n")
+	new_car := NewCar(5, 2)
+	fmt.Printf("new car battery = %d and distance = %d\n", new_car.battery, new_car.distance)
+	new_car.Drive()
+	new_car.DisplayDistance()
+	new_car.DisplayBattery()
+	fmt.Printf("can the car %v make it around the track %v? %t\n", new_car, track, new_car.CanFinish(track.distance))
 }

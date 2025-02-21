@@ -22,16 +22,14 @@ func CalculateCost(numberOfCars int) uint {
 func ArithmeticTest() {
 	carCount := 1547
 	carRate := 90
-	fmt.Println("cars per hour =", carCount, "success rate =", carRate)
-	fmt.Println("working cars per hour =", CalculateWorkingCarsPerHour(carCount, carRate))
+	fmt.Printf("cars per hour = %d, success rate = %d, working cars per hour = %f\n",
+		carCount, carRate, CalculateWorkingCarsPerHour(carCount, carRate))
 	carCount = 1105
 	carRate = 90
-	fmt.Println("cars per hour =", carCount, "success rate =", carRate)
-	fmt.Println("working cars per minute =", CalculateWorkingCarsPerMinute(carCount, carRate))
+	fmt.Printf("cars per hour = %d, success rate = %d, working cars per minute = %d\n",
+		carCount, carRate, CalculateWorkingCarsPerMinute(carCount, carRate))
 	carCount = 37
-	fmt.Println("cars to make =", carCount)
-	fmt.Println("cost =", CalculateCost(carCount))
+	fmt.Printf("cars to make = %d, cost = %d\n", carCount, CalculateCost(carCount))
 	carCount = 21
-	fmt.Println("cars to make =", carCount)
-	fmt.Println("cost =", CalculateCost(carCount))
+	fmt.Printf("cars to make = %d, cost = %d\n", carCount, CalculateCost(carCount))
 }

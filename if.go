@@ -34,18 +34,18 @@ func CalculateResellPrice(originalPrice int, age int) int {
 
 func IfTest() {
 	kind := "bike"
-	fmt.Println("a", kind, "needs a license?", NeedsLicense(kind))
+	fmt.Printf("a %s needs a license? %t\n", kind, NeedsLicense(kind))
 	kind = "car"
-	fmt.Println("a", kind, "needs a license?", NeedsLicense(kind))
+	fmt.Printf("a %s needs a license? %t\n", kind, NeedsLicense(kind))
 	car1 := "Volkswagen Beetle"
 	car2 := "Toyota Corolla"
-	fmt.Println("between", car1, "and", car2, "you should get a", ChooseVehicle(car1, car2))
-	fmt.Println("between", car1, "and", car2, "you should get a", ChooseVehicle(car2, car1))
+	fmt.Printf("between %s and %s, you should get a %s\n", car1, car2, ChooseVehicle(car1, car2))
+	fmt.Printf("between %s and %s, you should get a %s\n", car2, car1, ChooseVehicle(car2, car1))
 	car_age := 1
 	og_car_price := 1000
-	fmt.Println("my", car_age, "year old car cost", og_car_price, "and is now worth", CalculateResellPrice(og_car_price, car_age))
+	fmt.Printf("my %d year old car cost $%d and is now worth $%d\n", car_age, og_car_price, CalculateResellPrice(og_car_price, car_age))
 	car_age = 5
-	fmt.Println("my", car_age, "year old car cost", og_car_price, "and is now worth", CalculateResellPrice(og_car_price, car_age))
+	fmt.Printf("my %d year old car cost $%d and is now worth $%d\n", car_age, og_car_price, CalculateResellPrice(og_car_price, car_age))
 	car_age = 15
-	fmt.Println("my", car_age, "year old car cost", og_car_price, "and is now worth", CalculateResellPrice(og_car_price, car_age))
+	fmt.Printf("my %d year old car cost $%d and is now worth $%d\n", car_age, og_car_price, CalculateResellPrice(og_car_price, car_age))
 }

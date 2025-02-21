@@ -24,9 +24,9 @@ func ShuffleAnimals() []string {
 }
 
 func RandomnessTest() {
-	fmt.Println("rolling a random int:", RollADie())
-	fmt.Println(fmt.Sprintf("generate a random floating point: %.2f", GenerateWandEnergy()))
-	fmt.Println("animals before shuffling:", animals)
+	fmt.Printf("rolling a random int: %d\n", RollADie())
+	fmt.Printf("generate a random floating point: %.2f\n", GenerateWandEnergy())
+	fmt.Printf("animals before shuffling: %s\n", animals)
 	ShuffleAnimals()
-	fmt.Println("animals after shuffling:", animals)
+	fmt.Printf("animals after shuffling: %s\n", animals)
 }

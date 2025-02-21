@@ -20,6 +20,6 @@ func ElapsedTime(numberOfLayers, actualMinutesInOven int) int {
 func BasicsTest() {
 	layers := 3
 	minutes := 20
-	fmt.Println("number of layers =", layers, "actual minutes in oven =", minutes)
-	fmt.Println(ElapsedTime(layers, minutes))
+	fmt.Printf("number of layers = %d\nactual minutes in oven = %d\nelapsed minutes: %d\n",
+		layers, minutes, ElapsedTime(layers, minutes))
 }

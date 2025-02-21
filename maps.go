@@ -26,10 +26,10 @@ func AddMapItem(bill, units map[string]int, item_name, quantity_string string) b
 		if bill[item_name] != 0 {
 			var old_quantity = bill[item_name]
 			bill[item_name] += units[quantity_string]
-			fmt.Println(fmt.Sprintf("increased '%s' quantity from %d to %d", item_name, old_quantity, bill[item_name]))
+			fmt.Printf("increased '%s' quantity from %d to %d\n", item_name, old_quantity, bill[item_name])
 		} else {
 			bill[item_name] = units[quantity_string]
-			fmt.Println(fmt.Sprintf("added new item '%s' with quantity %d", item_name, bill[item_name]))
+			fmt.Printf("added new item '%s' with quantity %d\n", item_name, bill[item_name])
 		}
 		return true
 	}
@@ -46,18 +46,19 @@ func RemoveMapItem(bill, units map[string]int, item_name, quantity_string string
 		var new_quantity = bill[item_name] - units[quantity_string]
 		// Invalid quantity after removal
 		if new_quantity < 0 {
-			fmt.Println(fmt.Sprintf("invalid quantity for '%s'; current quantity is %d and removing %d would leave %d", item_name, old_quantity, units[quantity_string], new_quantity))
+			fmt.Printf("invalid quantity for '%s'; current quantity is %d and removing %d would leave %d\n",
+				item_name, old_quantity, units[quantity_string], new_quantity)
 			return false
 		} else if new_quantity == 0 {
 			delete(bill, item_name)
-			fmt.Println(fmt.Sprintf("removed item '%s' from bill", item_name))
+			fmt.Printf("removed item '%s' from bill\n", item_name)
 		} else {
 			bill[item_name] = new_quantity
-			fmt.Println(fmt.Sprintf("decreased '%s' quantity from %d to %d", item_name, old_quantity, bill[item_name]))
+			fmt.Printf("decreased '%s' quantity from %d to %d\n", item_name, old_quantity, bill[item_name])
 		}
 		return true
 	}
-	fmt.Println(item_name, "not found, nothing to remove")
+	fmt.Printf("'%s' not found, nothing to remove\n", item_name)
 	return false
 }
 
