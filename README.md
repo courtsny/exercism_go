@@ -1,1 +1,1 @@
-Building with go build *.go and running ./arithmetic. Nicer version TK :)
+Building with go build -o exercism *.go and running ./exercism
